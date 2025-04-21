@@ -1,121 +1,210 @@
-/* Reset básico */
+:root {
+  --azul-oscuro: #365d65;
+  --crema: #fff6b0;
+  --dorado: #e1a541;
+  --rojo: #9d2d2d;
+  --vino: #530b0b;
+  --blanco: #fff;
+  --negro: #222;
+  --gris: #ddd;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to bottom right, var(--vino), var(--rojo), var(--azul-oscuro));
+  color: var(--blanco);
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.05); /* sutil fondo blanco transparente */
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(54, 93, 101, 0.95);
+  z-index: 999;
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.navbar a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--dorado);
+}
+
+/* SECCIONES */
+header,
+section,
+footer {
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--crema);
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.3rem;
+  color: var(--dorado);
+}
+
+.redes a {
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--crema);
+}
+
+.redes a:hover {
+  color: var(--dorado);
+}
+
+h2 {
+  color: var(--crema);
+  border-bottom: 2px solid var(--dorado);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.estudios,
+.proyecto {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--crema);
+}
+
+a:hover {
+  color: var(--dorado);
+}
+
+/* ANIMACIONES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  body {
-    font-family: "Segoe UI", sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    transition: background 0.3s ease;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Header */
-  header {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-  
-  header h1 {
-    font-size: 2.5rem;
-    animation: fadeInDown 1s ease;
-  }
-  
-  header p {
-    font-size: 1.2rem;
-    margin: 0.5rem 0 1rem;
-  }
-  
-  .redes a {
-    margin: 0 0.5rem;
-    color: #1da1f2;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .redes a:hover {
-    color: #0d8ddb;
-  }
-  
-  /* Secciones */
-  section {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-  }
-  
-  h2 {
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 0.5rem;
-  }
-  
-  /* Proyectos */
-  .proyectos-lista {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    margin-top: 1rem;
-  }
-  
-  .proyecto {
-    background: white;
-    padding: 1rem;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .proyecto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-  
-  .proyecto a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: #007acc;
-    text-decoration: none;
-  }
-  
-  .proyecto a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Contacto */
-  #contacto a {
-    color: #007acc;
-    text-decoration: none;
-  }
-  
-  #contacto a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Footer */
-  footer {
-    background: #eee;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  /* Animaciones */
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}
+
+.seccion {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* CONTACTO WHATSAPP */
+.contacto-whatsapp svg {
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--crema);
+}
+.nav-container{
+  position: relative;
+  background: #2d2d2d;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.navigation{
+  position: relative;
+  display: flex;
+  gap: 30px;
+}
+
+.navigation li {
+  list-style: none;
+  position: relative;
+}
+.navigation li a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.navigation li.active a {
+  color: #1a1a1a;
+}
+
+.highlight {
+  position: absolute;
+  background: #e1a541;
+  height: 100%;
+  width: 90px;
+  top: 0;
+  left: 0;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.navigation li a::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #e1a541;
+  transition: 0.3s;
+}
+
+.navigation li:hover a::before {
+  width: 80%;
+}
+
+.navigation li.active a::before {
+  width: 0;
+}
