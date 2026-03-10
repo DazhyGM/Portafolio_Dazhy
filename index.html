@@ -1,104 +1,266 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Portafolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio | Desarrollador Full Stack</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        accent: '#38bdf8',
+                        secondary: '#818cf8'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
+<body class="bg-dark text-slate-300 font-sans antialiased selection:bg-accent selection:text-dark">
 
-  
+    <!-- NAV BAR -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-2xl text-white tracking-wider">
+                    DEV<span class="text-accent">.PORTFOLIO</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio"
+                            class="hover:text-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+                        <a href="#stack"
+                            class="hover:text-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Tecnologías</a>
+                        <a href="#proyectos"
+                            class="hover:text-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Proyectos</a>
+                        <a href="#contacto"
+                            class="bg-accent text-dark hover:bg-sky-400 transition-colors px-4 py-2 rounded-full text-sm font-bold">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <!-- CONTENEDOR PRINCIPAL -->
-  <div class="container">
-
-    <!-- NAVBAR FIJO -->
-  <div class="nav-container">
-    <ul class="navigation">
-        <div class="highlight"></div>
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Sobre mi</a></li>
-        <li><a href="#">Estudios</a></li>
-        <li><a href="#">Proyectos</a></li>
-        <li><a href="#">Contacto</a></li>
-    </ul>
-
-  </div>
-
-    <header class="seccion">
-      <h1>Hola, soy Kevin Sabogal</h1>
-      <p>Desarrollador Web</p>
-      <div class="redes">
-        <a href="https://github.com/DazhyGM" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/david-sabogal-5349012b9/" target="_blank">LinkedIn</a>
-      </div>
-    </header>
-
-    <section id="sobre-mi" class="seccion">
-      <h2>Sobre mí</h2>
-      <p>
-        Soy un desarrollador web apasionado por crear experiencias limpias y funcionales. Me especializo en HTML,
-        CSS, JavaScript, como tecnologías básicas, y más a profundidad tengo conocimiento y he trabajado con
-        Node.js, Vue, React y PHP. Me gustaría aprender muchas más tecnologías, aunque por el momento mi enfoque es
-        aprender mucho más de estas que ya he manejado y entenderlas lo mejor posible, con el fin de poder brindar
-        todo mi apoyo a proyectos con mis habilidades y competencias.
-      </p>
+    <!-- HERO SECTION -->
+    <section id="inicio" class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-accent font-semibold tracking-wide uppercase text-sm mb-4">Hola, soy Kevin</h2>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                Ingeniero de Software en Formación <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
+                    Transformando Ideas en Software
+                </span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400">
+                Estudiante de Ingeniería de Software con experiencia en
+                <span class="text-white font-semibold">desarrollo web full stack</span> y
+                <span class="text-white font-semibold">soporte TI</span>.
+                He creado sistemas de gestión, inventarios y plataformas de
+                <span class="text-accent">control de proyectos</span> con
+                <span class="text-white font-semibold">Node.js, Vue.js y C#</span>.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#proyectos"
+                    class="px-8 py-3 bg-white text-dark font-bold rounded-lg hover:bg-slate-200 transition-all shadow-lg shadow-white/10">
+                    Ver Proyectos
+                </a>
+                <a href="https://github.com/DazhyGM" target="_blank"
+                    class="px-8 py-3 border border-slate-600 text-white font-bold rounded-lg hover:border-accent hover:text-accent transition-all">
+                    <i class="fab fa-github mr-2"></i> GitHub
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section id="estudios" class="seccion">
-      <h2>Estudios</h2>
-      <div class="estudios-lista">
-        <div class="estudios">
-          <h3>Tecnólogo en Análisis y Desarrollo de Software</h3>
-          <p>Fecha de inicio: Abril/2024</p>
-          <p>Fecha de finalización: Enero/2026</p>
+    <!-- TECH STACK SECTION -->
+    <section id="stack" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">Tecnologías que domino</h2>
+                <p class="mt-2 text-slate-400">Herramientas que utilizo para llevar mis ideas a la realidad</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
+                <!-- JavaScript -->
+                <div
+                    class="group flex flex-col items-center p-6 bg-card rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-800 hover:border-accent">
+                    <i class="fab fa-js text-5xl text-yellow-400 mb-3"></i>
+                    <span class="font-semibold text-white">JavaScript</span>
+                </div>
+                <!-- Vue -->
+                <div
+                    class="group flex flex-col items-center p-6 bg-card rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-800 hover:border-green-400">
+                    <i class="fab fa-vuejs text-5xl text-green-500 mb-3"></i>
+                    <span class="font-semibold text-white">Vue.js</span>
+                </div>
+                <!-- Node -->
+                <div
+                    class="group flex flex-col items-center p-6 bg-card rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-800 hover:border-green-600">
+                    <i class="fab fa-node text-5xl text-green-600 mb-3"></i>
+                    <span class="font-semibold text-white">Node.js</span>
+                </div>
+                <!-- Angular (reemplaza Next.js) -->
+                <div
+                    class="group flex flex-col items-center p-6 bg-card rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-800 hover:border-red-500">
+                    <i class="fab fa-angular text-5xl text-red-500 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-semibold text-white">Angular</span>
+                </div>
+                <!-- Python (reemplaza Express) -->
+                <div
+                    class="group flex flex-col items-center p-6 bg-card rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-800 hover:border-blue-400">
+                    <i class="fab fa-python text-5xl text-blue-400 mb-3"></i>
+                    <span class="font-semibold text-white">Python</span>
+                </div>
+                <!-- Java -->
+                <div
+                    class="group flex flex-col items-center p-6 bg-card rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-800 hover:border-red-500">
+                    <i class="fab fa-java text-5xl text-red-500 mb-3"></i>
+                    <span class="font-semibold text-white">Java</span>
+                </div>
+                <!-- C# -->
+                <div
+                    class="group flex flex-col items-center p-6 bg-card rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-800 hover:border-purple-500">
+                    <i class="fab fa-microsoft text-5xl text-purple-500 mb-3"></i>
+                    <span class="font-semibold text-white">C#</span>
+                </div>
+                <!-- .NET -->
+                <div
+                    class="group flex flex-col items-center p-6 bg-card rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-800 hover:border-blue-400">
+                    <i class="fab fa-microsoft text-5xl text-blue-400 mb-3"></i>
+                    <span class="font-semibold text-white">.NET</span>
+                </div>
+            </div>
         </div>
-        <div class="estudios">
-          <h3>Técnico en Programación de Software</h3>
-          <p>Fecha de inicio: Abril/2022</p>
-          <p>Fecha de finalización: Agosto/2023</p>
-        </div>
-      </div>
     </section>
 
-    <section id="proyectos" class="seccion">
-      <h2>Proyectos</h2>
-      <div class="proyectos-lista">
-        <div class="proyecto">
-          <h3>MysticalCut</h3>
-          <p>Proyecto estudiantil de manejo de usuarios, agendamiento de citas y un e-commerce para una barbería.</p>
-          <a href="https://github.com/DazhyGM/MysticalCutVue.git" target="_blank">Ver en GitHub</a>
+    <!-- PROJECTS SECTION -->
+    <section id="proyectos" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">Proyectos Destacados</h2>
+                <p class="mt-2 text-slate-400">Una selección de mis trabajos personales</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Proyecto 1: Sistema de Gestión para Barberías -->
+                <div
+                    class="bg-card rounded-2xl overflow-hidden border border-slate-800 hover:border-accent transition-all duration-300 group">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center text-slate-600">
+                        <img src="img/mysticalcut.png" alt="Proyecto 1" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                            Sistema de Gestión para Barberías
+                        </h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            Sistema completo con agendamiento de citas, gestión de usuarios y roles, API REST con
+                            Swagger,
+                            recuperación de contraseña por correo y confirmación de citas.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded text-slate-300">Node.js</span>
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded text-slate-300">Vue.js</span>
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded text-slate-300">API REST</span>
+                        </div>
+                        <a href="https://github.com/DazhyGM/MysticalCutVue" target="_blank"
+                            class="block w-full text-center py-2 bg-slate-800 hover:bg-accent hover:text-dark font-bold rounded-lg transition-colors">
+                            <i class="fab fa-github mr-1"></i> Ver en GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Sistema de Inventario de Equipos -->
+                <div
+                    class="bg-card rounded-2xl overflow-hidden border border-slate-800 hover:border-accent transition-all duration-300 group">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center text-slate-600">
+                        <img src="img/inventario.png" alt="Proyecto 1" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                            Inventario de Equipos de Cómputo
+                        </h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            Sistema de control para soporte técnico con búsqueda por hostname, estados automáticos
+                            (en progreso/completado), registro por campañas y actualización automática de fechas.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded text-slate-300">Node.js</span>
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded text-slate-300">Vue.js</span>
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded text-slate-300">Soporte IT</span>
+                        </div>
+                        <a href="https://github.com/DazhyGM/INVENTARIO_EQUIPOS" target="_blank"
+                            class="block w-full text-center py-2 bg-slate-800 hover:bg-accent hover:text-dark font-bold rounded-lg transition-colors">
+                            <i class="fab fa-github mr-1"></i> Ver en GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: Gestor de Proyectos (Tipo Jira) -->
+                <div
+                    class="bg-card rounded-2xl overflow-hidden border border-slate-800 hover:border-accent transition-all duration-300 group">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center text-slate-600">
+                        <img src="img/proyectos.png" alt="Proyecto 1" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                            Gestor de Proyectos (Tipo Jira)
+                        </h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            Plataforma de gestión con creación de proyectos y tareas, asignación de responsables,
+                            barras de progreso, notificaciones por correo y push, y control de vencimientos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded text-slate-300">C#</span>
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded text-slate-300">.NET</span>
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded text-slate-300">Notificaciones</span>
+                        </div>
+                        <a href="https://github.com/DazhyGM/GestionProyectos" target="_blank"
+                            class="block w-full text-center py-2 bg-slate-800 hover:bg-accent hover:text-dark font-bold rounded-lg transition-colors">
+                            <i class="fab fa-github mr-1"></i> Ver en GitHub
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="proyecto">
-          <h3>Proyecto 2</h3>
-          <p>Próximamente habrá un nuevo proyecto</p>
-          <a href="https://github.com/DazhyGM" target="_blank">Ver en GitHub</a>
-        </div>
-      </div>
     </section>
 
-    <section id="contacto" class="seccion">
-      <h2>Contacto</h2>
-      <p>Puedes escribirme un correo a: <a href="mailto:kevinsabogal24@gmail.com">kevinsabogal24@gmail.com</a></p>
-      <p class="contacto-whatsapp">
-        También puedes contactarme por WhatsApp:
-        <a href="https://wa.me/+573003113203" target="_blank" aria-label="WhatsApp">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#25D366" viewBox="0 0 256 256">
-            <path
-              d="M128 0C57.31 0 0 57.31 0 128a127.13 127.13 0 0017.47 65.05L0 256l64.23-17.19A127.81 127.81 0 00128 256c70.69 0 128-57.31 128-128S198.69 0 128 0zM128 230.4a102.5 102.5 0 01-52.82-14.88l-3.78-2.26-38.1 10.2 10.17-37.13-2.46-3.91A102.45 102.45 0 11230.4 128c0 56.35-45.83 102.4-102.4 102.4zm60.57-75.5c-3.31-1.65-19.55-9.64-22.58-10.74s-5.24-1.65-7.45 1.66-8.54 10.74-10.48 12.95-3.86 2.48-7.17.83-13.95-5.15-26.56-16.42c-9.82-8.74-16.45-19.55-18.38-22.85s-.2-5.1 1.24-6.76c1.27-1.52 2.86-3.97 4.29-5.95s1.91-3.31 2.86-5.52.48-4.14-.24-5.8-7.17-17.25-9.83-23.67-5.07-5.42-7-5.52-3.86-.12-5.8-.12a11.14 11.14 0 00-8.1 3.79c-2.77 3.31-10.75 10.5-10.75 25.61s11 29.61 12.52 31.66 21.69 33.11 52.55 45.2a176 176 0 0017.65 6.51c7.41 2.35 14.15 2.02 19.48 1.23 5.95-.88 19.55-7.99 22.32-15.69s2.77-14.27 1.94-15.63-3-2.43-6.26-4.08z" />
-          </svg>
-        </a>
-      </p>
+
+    <!-- CONTACT SECTION -->
+    <section id="contacto" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">¿Trabajamos juntos?</h2>
+            <p class="text-slate-400 mb-8">Estoy disponible para proyectos freelance u oportunidades laborales</p>
+
+            <!-- Botón de WhatsApp -->
+            <a href="https://wa.me/573003113203?text=Hola,%20me%20interesa%20conversar%20contigo%20sobre%20posibles%20oportunidades%20de%20colaboración."
+                target="_blank"
+                class="inline-flex items-center px-8 py-3 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition-colors shadow-lg shadow-green-500/30">
+                <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                Contactar por WhatsApp
+            </a>
+
+            <!-- Opcional: Email alternativo -->
+            <div class="mt-6">
+                <p class="text-slate-500 text-sm">O escríbeme a:</p>
+                <a href="mailto:kevinsabogal24@gmail.com" class="text-accent hover:text-white transition-colors">
+                    kevinsabogal24@gmail.com
+                </a>
+            </div>
+        </div>
     </section>
 
-    <footer class="seccion">
-      <p>© 2025 • DazhyGM •</p>
-    </footer>
-
-  </div>
 </body>
 
 </html>
